@@ -1,24 +1,82 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 import './App.css';
+import Moyenne from './components/Moyenne/Moyenne';
 
 function App() {
+  const [currentExercise, setCurrentExercise] = useState('moyenne'); // Changed from 'double' to 'moyenne'
+
+  const handleExerciseChange = (event, exercise) => {
+    event.preventDefault();
+    setCurrentExercise(exercise);
+  };
+
+  const renderExercise = () => {
+    switch(currentExercise) {
+      case 'moyenne':
+        return <Moyenne />;
+      default:
+        return <Moyenne />; // Changed from <Double /> to <Moyenne />
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <h1>⚽ L'Académie de Foot des Maths en 5 ème⚽</h1>
+        
+        <div className="exercise-buttons">
+          <button 
+            className={`bulletin-button ${currentExercise === 'moyenne' ? 'active' : ''}`}
+            onClick={(event) => handleExerciseChange(event, 'moyenne')}
+          >
+            Tableau des Scores 🏆
+          </button>
+          
+          <div className="other-exercises">
+            <button 
+              className={`exercise-button ${currentExercise === 'double' ? 'active' : ''}`}
+              onClick={(event) => handleExerciseChange(event, 'double')}
+            >
+              Tirs au But ⚽
+            </button>
+            <button 
+              className={`exercise-button ${currentExercise === 'moitie' ? 'active' : ''}`}
+              onClick={(event) => handleExerciseChange(event, 'moitie')}
+            >
+              Mi-Temps ⏱️
+            </button>
+            <button 
+              className={`exercise-button ${currentExercise === 'ecris' ? 'active' : ''}`}
+              onClick={(event) => handleExerciseChange(event, 'ecris')}
+            >
+              Tactique 📋
+            </button>
+            <button 
+              className={`exercise-button ${currentExercise === 'calculs' ? 'active' : ''}`}
+              onClick={(event) => handleExerciseChange(event, 'calculs')}
+            >
+              Stats du Match 📊
+            </button>
+            <button 
+              className={`exercise-button ${currentExercise === 'arbre' ? 'active' : ''}`}
+              onClick={(event) => handleExerciseChange(event, 'arbre')}
+            >
+              Formation 4-4-2 ⚽
+            </button>
+            <button 
+              className={`exercise-button ${currentExercise === 'trouve' ? 'active' : ''}`}
+              onClick={(event) => handleExerciseChange(event, 'trouve')}
+            >
+              Numéros des Joueurs 👕
+            </button>
+          </div>
+        </div>
+
+        {renderExercise()}
+      </div>
+    </Provider>
   );
 }
 

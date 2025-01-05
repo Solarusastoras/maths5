@@ -1,0 +1,107 @@
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    
+
+    .validate-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .validate-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 25px;
+      height: 50px;
+      font-size: 1rem;
+    }
+
+    .clear-all-button {
+      background-color: #dc3545;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      height: 50px;
+      font-size: 1rem;
+    }
+}
+
+.validelete-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  
+  .score-section {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .buttons-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+    button {
+        padding: 10px 20px;
+        border-radius: 25px;
+        border: none;
+        font-size: 1em;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+
+      
+      .icon {
+        margin-right: 8px;
+        font-size: 1.2em;
+      }
+      
+      &:hover {
+        transform: translateY(-2px);
+      }
+      
+      &:active {
+        transform: translateY(1px);
+      }
+    }
+
+    .validate-button {
+        background-color: #ff69b4;
+        color: white;
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
+        }
+    }
+
+    .clear-button {
+        background-color: #ff0000;
+        color: rgb(255, 255, 255);
+        border: 2px solid #ff69b4;
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(255, 105, 180, 0.2);
+        }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .validelete-container {
+    .buttons-section {
+      flex-direction: column;
+      
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

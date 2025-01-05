@@ -1,0 +1,157 @@
+.bulletin-container {
+  background: rgba(255, 255, 255, 0.95) url('https://www.transparenttextures.com/patterns/black-thread-light.png');
+  border: 4px solid #1a472a;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  max-width: 1200px;
+  margin: 2rem auto;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="black"/><circle cx="50" cy="50" r="38" fill="white"/></svg>') center/contain no-repeat;
+  }
+
+  h2 {
+    color: #1a472a;
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 1rem 0 2rem;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+
+    th {
+      background: linear-gradient(45deg, #1a472a, #2d5a3f);
+      color: white;
+      padding: 1rem;
+      font-family: 'Arial Black', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 8px;
+      font-size: 1.6rem;
+    }
+
+    td {
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid #1a472a;
+      border-radius: 8px;
+      padding: 1rem;
+      transition: transform 0.3s ease;
+      font-size: 1.6rem;
+
+      &:first-child {
+        font-weight: bold;
+        color: #1a472a;
+        font-size: 1.6rem;
+      }
+
+      input {
+        width: 70px;
+        padding: 0.5rem;
+        border: 2px solid #1a472a;
+        border-radius: 25px;
+        text-align: center;
+        font-family: 'Arial Black', sans-serif;
+        color: #1a472a;
+        font-size: 1.6rem;
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 10px rgba(26, 71, 42, 0.4);
+        }
+      }
+
+      &:last-child {
+        color: #2d5a3f;
+        font-weight: bold;
+        font-size: 1.1em;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        transition: color 0.3s ease;
+        
+        // Couleurs différentes selon l'appréciation
+        &:contains("Champion du Monde") { color: #FFD700; } // Or
+        &:contains("Star du club") { color: #90EE90; } // Vert clair
+        &:contains("Titulaire") { color: #32CD32; } // Vert lime
+        &:contains("Sur le Banc") { color: #3CB371; } // Vert moyen
+        &:contains("Remplaçant") { color: #FF8C00; } // Orange
+        &:contains("Tu as les pieds carré") { color: #FF4500; } // Orange rouge
+        &:contains("Quitte Académie") { color: #FF0000; } // Rouge
+        &:contains("À l'Entraînement") { color: #808080; } // Gris
+      }
+    }
+
+    tr:hover td {
+      transform: scale(1.02);
+      background: rgba(26, 71, 42, 0.1);
+    }
+  }
+
+  .moyenne-generale {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(45deg, #1a472a, #2d5a3f);
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+
+    &::before {
+      content: '⚽';
+      font-size: 2em;
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    h3 {
+      font-family: 'Arial Black', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .appreciation {
+      font-weight: bold;
+      margin-top: 1rem;
+      color: #90EE90;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      font-size: 1.2em;
+      
+      &::before {
+        content: '⚽';
+        margin-right: 10px;
+      }
+      
+      &::after {
+        content: '⚽';
+        margin-left: 10px;
+      }
+      
+      // Mêmes couleurs pour l'appréciation générale
+      &:contains("Champion du Monde") { color: #FFD700; }
+      &:contains("Star du club") { color: #90EE90; }
+      &:contains("Titulaire") { color: #32CD32; }
+      &:contains("Sur le Banc") { color: #3CB371; }
+      &:contains("Remplaçant") { color: #FF8C00; }
+      &:contains("Tu as les pieds carré") { color: #FF4500; }
+      &:contains("Quitte Académie") { color: #FF0000; }
+      &:contains("À l'Entraînement") { color: #808080; }
+    }
+  }
+}
