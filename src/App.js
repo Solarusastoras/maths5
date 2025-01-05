@@ -24,14 +24,14 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <h1>⚽ L'Académie de Foot des Maths en 5 ème⚽</h1>
+        <h1>⚽ L'Académie de Foot des Maths en 5 ème 🏆</h1>
         
         <div className="exercise-buttons">
           <button 
             className={`bulletin-button ${currentExercise === 'moyenne' ? 'active' : ''}`}
             onClick={(event) => handleExerciseChange(event, 'moyenne')}
           >
-            Tableau des Scores 🏆
+            Performance du Joueur 📋
           </button>
           
           <div className="other-exercises">
@@ -39,37 +39,37 @@ function App() {
               className={`exercise-button ${currentExercise === 'double' ? 'active' : ''}`}
               onClick={(event) => handleExerciseChange(event, 'double')}
             >
-              Tirs au But ⚽
+              Tirs au But 🥅
             </button>
             <button 
               className={`exercise-button ${currentExercise === 'moitie' ? 'active' : ''}`}
               onClick={(event) => handleExerciseChange(event, 'moitie')}
             >
-              Mi-Temps ⏱️
+              Mi-Temps ⚡
             </button>
             <button 
               className={`exercise-button ${currentExercise === 'ecris' ? 'active' : ''}`}
               onClick={(event) => handleExerciseChange(event, 'ecris')}
             >
-              Tactique 📋
+              Stratégie 🎯
             </button>
             <button 
               className={`exercise-button ${currentExercise === 'calculs' ? 'active' : ''}`}
               onClick={(event) => handleExerciseChange(event, 'calculs')}
             >
-              Stats du Match 📊
+              Stats Match 📊
             </button>
             <button 
               className={`exercise-button ${currentExercise === 'arbre' ? 'active' : ''}`}
               onClick={(event) => handleExerciseChange(event, 'arbre')}
             >
-              Formation 4-4-2 ⚽
+              Formation 442 ⭐
             </button>
             <button 
               className={`exercise-button ${currentExercise === 'trouve' ? 'active' : ''}`}
               onClick={(event) => handleExerciseChange(event, 'trouve')}
             >
-              Numéros des Joueurs 👕
+              Maillots 👕
             </button>
           </div>
         </div>

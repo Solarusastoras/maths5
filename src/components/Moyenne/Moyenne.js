@@ -64,14 +64,13 @@ function Moyenne() {
 
     const getAppreciation = (score) => {
         if (!score) return "";
-        if (score >= 16) return "Champion du Monde! 🏆";
-        if (score >= 14) return "Star du club! 🌟";
-        if (score >= 12) return "Titulaire! ⚽";
-        if (score >= 10) return "Sur le Banc 🏃";
-        if (score >= 8) return "Remplaçant! 🔄";
-        if (score >= 4) return "Tu as les pieds carré 🔄";
-        if (score >= 3) return "Quitte Académie 🏃";
-        return "Quitte Académie 💪";
+        if (score >= 16) return "Champion du Monde! 🏆 🌟 ⚽";
+        if (score >= 14) return "Star du Club! ⭐ 🌟 ⚽";
+        if (score >= 12) return "Titulaire! 🎯 ⚽ 💪";
+        if (score >= 10) return "Sur le Banc 🪑 💨";
+        if (score >= 8) return "Remplaçant! 🔄 🎽";
+        if (score >= 4) return "🟥 Tu es exclu 😅";
+        return "Exclu du Centre de Formation! 📚 💪";
     };
 
     const averageScore = exercises
@@ -80,7 +79,7 @@ function Moyenne() {
 
     return (
         <div className="bulletin-container">
-            <h2>Note du Joueur 📊</h2>
+            <h2>🟨 Performance du Joueur 🟥</h2>
 
             <table>
                 <thead>

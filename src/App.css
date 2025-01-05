@@ -159,12 +159,12 @@ input[type=number] {
 .exercise-buttons button:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(45deg, #000000, #262626);
+  background: linear-gradient(45deg, #449a3f, #2d6e17);
   color: antiquewhite;
 }
 
 .exercise-buttons button.active {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #346a2e, #3a5f38);
   transform: translateY(1px);
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.798);
   color: antiquewhite;
