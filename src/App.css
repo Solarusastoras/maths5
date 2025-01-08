@@ -223,3 +223,85 @@ input[type=number] {
   top: -10px;
   animation: sparkle 1s infinite;
 }
+
+@media (max-width: 1024px) {
+  .App {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .exercise-buttons {
+    gap: 0.8rem;
+  }
+
+  .other-exercises {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin: 1rem 0;
+    padding: 0 20px;
+    font-size: 1.2em;
+  }
+
+  h1::before,
+  h1::after {
+    display: none;
+  }
+
+  .exercise-buttons {
+    gap: 0.5rem;
+  }
+
+  .other-exercises {
+    grid-template-columns: 1fr;
+  }
+
+  .exercise-button,
+  .bulletin-button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .exercise-buttons button {
+    min-width: auto;
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 10px 5px;
+  }
+
+  .exercise-buttons button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .exercise-buttons button:hover {
+    transform: none;
+  }
+
+  .App::before,
+  .App::after {
+    display: none;
+  }
+
+  .exercise-buttons {
+    padding: 0 10px;
+  }
+
+  .exercise-button {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}

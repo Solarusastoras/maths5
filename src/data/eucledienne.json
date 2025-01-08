@@ -1,0 +1,133 @@
+{
+  "title": "Exercices de Mathématiques - Division Euclidienne",
+  "exercises": [
+    {
+      "id": 1,
+      "title": "Exercice 1",
+      "questions": [
+        {
+          "id": "ex1a",
+          "text": "a) Posez la division euclidienne de 347 par 5 :",
+          "type": "text",
+          "correctAnswer": "347:5 = 5 x 69 reste 2"
+        },
+        {
+          "id": "ex1b",
+          "text": "b) Posez la division euclidienne de 431 par 14 :",
+          "type": "text",
+          "correctAnswer": "431 = 14 × 30 + 11"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Exercice 2",
+      "questions": [
+        {
+          "id": "ex2a",
+          "text": "a) 43 est-il un multiple de 3 ? Justifiez :",
+          "type": "text",
+          "correctAnswer": "non"
+        },
+        {
+          "id": "ex2b",
+          "text": "b) 444 est-il un multiple de 3 ? Justifiez :",
+          "type": "text",
+          "correctAnswer": "oui"
+        },
+        {
+          "id": "ex2c",
+          "text": "c) Donnez un multiple de 5 plus grand que 100 :",
+          "type": "number",
+          "correctAnswer": "105"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Exercice 3",
+      "questions": [
+        {
+          "id": "ex3a",
+          "text": "a) Donnez tous les multiples de 9 inférieurs à 40 :",
+          "type": "text",
+          "correctAnswer": "9, 18, 27, 36"
+        },
+        {
+          "id": "ex3b",
+          "text": "b) Donnez tous les diviseurs de 70 :",
+          "type": "text",
+          "correctAnswer": "1, 2, 5, 7, 10, 14, 35, 70"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Exercice 4",
+      "questions": [
+        {
+          "id": "ex4a",
+          "text": "a) Donnez la définition d'un nombre premier :",
+          "type": "textarea",
+          "correctAnswer": "Un nombre premier est un entier naturel qui admet exactement deux diviseurs distincts entiers et positifs"
+        },
+        {
+          "id": "ex4b",
+          "text": "b) Dans la liste (1, 5, 9, 13, 21, 31, 33, 91), identifiez les nombres premiers :",
+          "type": "text",
+          "correctAnswer": "5, 13, 31"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Exercice 5",
+      "questions": [
+        {
+          "id": "ex5a",
+          "text": "Décomposez 66 :",
+          "type": "text",
+          "correctAnswer": "2 × 3 × 11"
+        },
+        {
+          "id": "ex5b",
+          "text": "Décomposez 175 :",
+          "type": "text",
+          "correctAnswer": "5² × 7"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Exercice 6",
+      "Prolem": "Un bus peut transporter 30 élèves. Combien de bus sont nécessaires pour transporter 350 élèves ? Combien de places libres y aura-t-il dans le dernier bus ?",
+      "questions": [
+        {
+          "id": "ex6a",
+          "text": "a) Nombre de bus nécessaires :",
+          "type": "number",
+          "correctAnswer": "12"
+        },
+        {
+          "id": "ex6b",
+          "text": "b) Places libres dans le dernier bus :",
+          "type": "number",
+          "correctAnswer": "4"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Exercice 7",
+      "Prolem": "Un paquet de 50 feuilles de papier coûte 2,50 €. Combien coûte un paquet de 400 feuilles ?",
+      "questions": [
+        {
+          "id": "ex7",
+          "text": "Nombre de paquets nécessaires :",
+          "type": "number",
+          "correctAnswer": "8"
+        }
+      ]
+    }
+  ]
+}

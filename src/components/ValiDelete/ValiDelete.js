@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import './_validelete.scss';
-import { useState, useCallback, useEffect } from 'react';
 
 const useValiDelete = ({ 
   exerciseKey, 
@@ -36,25 +35,37 @@ const useValiDelete = ({
 };
 
 function ValiDelete({ onValidate, onClear, scoreCalculator }) {
+  const [showScore, setShowScore] = useState(false);
+
+  const handleValidate = () => {
+    setShowScore(true);
+    onValidate();
+  };
+
+  const handleClear = () => {
+    setShowScore(false);
+    onClear();
+  };
+
   return (
     <div className="validelete-container">
-      <div className="score-section">
+      <div className={`score-section ${showScore ? 'visible' : ''}`}>
         {scoreCalculator}
       </div>
       <div className="buttons-section">
         <button 
           className="validate-button"
-          onClick={onValidate}
+          onClick={handleValidate}
         >
           <span className="icon"></span>
-          Correction ✅
+          Fin de Match ✅
         </button>
         <button 
           className="clear-button"
-          onClick={onClear}
+          onClick={handleClear}
         >
           <span className="icon"></span>
-          Tout effacer 🗑️
+          On refait le match 🗑️
         </button>
       </div>
     </div>

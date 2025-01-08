@@ -43,6 +43,16 @@
   .score-section {
     margin-bottom: 20px;
     text-align: center;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &.visible {
+      opacity: 1;
+      height: auto;
+      margin: 20px 0;
+    }
   }
 
   .buttons-section {
@@ -74,7 +84,7 @@
     }
 
     .validate-button {
-        background-color: #ff69b4;
+        background-color: #439625;
         color: white;
         &:hover {
           transform: translateY(-2px);
@@ -94,14 +104,17 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   .validelete-container {
     .buttons-section {
       flex-direction: column;
       
       button {
-        width: 100%;
+        width: 80%;
       }
     }
   }
+    .score-section {
+        width: 80%;
+    }
 }

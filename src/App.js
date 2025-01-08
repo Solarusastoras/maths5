@@ -1,11 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import './App.css';
 import Moyenne from './components/Moyenne/Moyenne';
+import Eucledienne from './components/Calculs/Eucledienne';
 
 function App() {
   const [currentExercise, setCurrentExercise] = useState('moyenne'); // Changed from 'double' to 'moyenne'
+
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      const root = document.createElement('div');
+      root.style.cssText = `
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        background: #ff6b6b;
+        color: white;
+        padding: 12px;
+        border-radius: 4px;
+        z-index: 9999;
+        font-family: Arial, sans-serif;
+      `;
+      
+      if (typeof window.__REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
+        root.textContent = 'Installez React DevTools pour une meilleure expérience de développement';
+        document.body.appendChild(root);
+        
+        setTimeout(() => {
+          document.body.removeChild(root);
+        }, 5000);
+      }
+    }
+  }, []);
 
   const handleExerciseChange = (event, exercise) => {
     event.preventDefault();
@@ -16,8 +43,10 @@ function App() {
     switch(currentExercise) {
       case 'moyenne':
         return <Moyenne />;
+      case 'Eucledienne':
+        return <Eucledienne />;
       default:
-        return <Moyenne />; // Changed from <Double /> to <Moyenne />
+        return <Moyenne />; 
     }
   };
 
@@ -36,14 +65,16 @@ function App() {
           
           <div className="other-exercises">
             <button 
-              className={`exercise-button ${currentExercise === 'double' ? 'active' : ''}`}
-              onClick={(event) => handleExerciseChange(event, 'double')}
+              className={`exercise-button ${currentExercise === 'Eucledienne' ? 'active' : ''}`}
+              onClick={(event) => handleExerciseChange(event, 'Eucledienne')}
             >
               Tirs au But 🥅
+              Eucledienne 
+
             </button>
             <button 
-              className={`exercise-button ${currentExercise === 'moitie' ? 'active' : ''}`}
-              onClick={(event) => handleExerciseChange(event, 'moitie')}
+              className={`exercise-button ${currentExercise === 'double' ? 'active' : ''}`}
+              onClick={(event) => handleExerciseChange(event, 'double')}
             >
               Mi-Temps ⚡
             </button>

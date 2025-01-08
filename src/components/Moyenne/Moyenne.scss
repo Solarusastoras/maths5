@@ -155,3 +155,154 @@
     }
   }
 }
+
+// Media queries
+@media (max-width: 1024px) {
+  .bulletin-container {
+    padding: 1.5rem;
+    margin: 1rem;
+    
+    h2 {
+      font-size: 1.8em;
+    }
+
+    table {
+      th, td {
+        font-size: 1.4rem;
+        padding: 0.8rem;
+      }
+
+      td input {
+        width: 60px;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .bulletin-container {
+    padding: 1rem;
+    
+    h2 {
+      font-size: 1.5em;
+    }
+
+    table {
+      display: block;
+      
+      thead {
+        display: none; // Cache les en-têtes sur mobile
+      }
+
+      tbody {
+        display: block;
+        width: 100%;
+      }
+
+      tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+        border: 2px solid #1a472a;
+        border-radius: 8px;
+        padding: 0.5rem;
+        
+        &:hover {
+          background: rgba(26, 71, 42, 0.05);
+        }
+      }
+
+      td {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        padding: 1rem 0.8rem;
+        
+        &:not(:last-child) {
+          border-bottom: 1px solid rgba(26, 71, 42, 0.2);
+        }
+
+        // Ajout des labels pour mobile
+        &:before {
+          content: attr(data-label);
+          font-weight: bold;
+          margin-bottom: 0.5rem; 
+          margin-right: 0; 
+          color: #1a472a;
+        }
+
+        input {
+          width: 120px; 
+          margin: 0.5rem auto; 
+        }
+
+        // Pour l'appréciation (dernière colonne)
+        &:last-child {
+          margin-top: 0.5rem;
+          text-align: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    .moyenne-generale {
+      padding: 1rem;
+      
+      h3 {
+        font-size: 1.2em;
+      }
+
+      .appreciation {
+        font-size: 1.1em;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .bulletin-container {
+    padding: 0.8rem;
+    margin: 0.5rem;
+    
+    h2 {
+      font-size: 1.2em;
+      margin: 0.5rem 0 1rem;
+    }
+
+    &::before {
+      width: 40px;
+      height: 40px;
+      top: -15px;
+    }
+
+    table {
+      th, td {
+        font-size: 1rem;
+        padding: 0.5rem;
+      }
+
+      td input {
+        width: 40px;
+        font-size: 1rem;
+      }
+    }
+
+    .moyenne-generale {
+      margin-top: 1rem;
+      
+      h3 {
+        font-size: 1em;
+      }
+
+      .appreciation {
+        font-size: 1em;
+        
+        &::before, &::after {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}

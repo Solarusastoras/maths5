@@ -1,0 +1,266 @@
+// Variables
+$primary-color: #1e5631;
+$white: #ffffff;
+$black: #000000;
+$transparent-white: rgba(255, 255, 255, 0.484);
+$success-color: #3add21;
+$shadow-color: rgba(0, 0, 0, 0.3);
+
+// Mixins
+@mixin flex-container($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin position-absolute($top: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
+@mixin glass-effect {
+  background: $transparent-white;
+  backdrop-filter: blur(5px);
+  border: 2px solid $white;
+}
+
+.euclidienne {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px $shadow-color;
+
+  section {
+    background: url('../../Image/cage_de_but.jpg') no-repeat;
+    background-size: 140%;
+    background-position: center 20%;
+    margin-bottom: 50px; // Augmentation de la marge entre les exercices
+    padding: 30px 40px 60px; // Augmentation du padding vertical
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+    font-size: 1.5rem;
+    @include flex-container(column);
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    // Ajout d'une séparation visuelle
+    &:not(:last-child) {
+      border-bottom: 2px solid rgba($white, 0.2);
+      padding-bottom: 40px;
+    }
+
+    // Question container
+    div {
+      width: 100%;
+      @include flex-container(column);
+      align-items: flex-start;
+      padding-right: 20px;
+    }
+
+    // Questions
+    p {
+      position: relative;
+      z-index: 2;
+      color: $black;
+      background-color: rgba($white, 0.32);
+      border-radius: 5px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      padding: 5px 10px;
+      margin: 5px 0 10px;
+    }
+
+    // Inputs
+    input, textarea {
+      width: 70%;
+      @include glass-effect;
+      border-radius: 10px;
+      padding: 10px 20px;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+
+      &:focus {
+        background: $white;
+        border-color: $success-color;
+        box-shadow: 0 0 15px rgba($success-color, 0.2);
+      }
+
+      &.correct-answer {
+        border-color: $black;
+        background: rgba($success-color, 0.1);
+      }
+    }
+
+    // Title
+    h3 {
+      @include position-absolute(20px, 20px);
+      color: $white;
+      font-size: 1.5em;
+      padding: 10px 20px;
+      background: rgba($black, 0.5);
+      border-radius: 30px;
+      z-index: 3;
+
+      &::before {
+        content: '⚽';
+        margin-right: 10px;
+      }
+    }
+
+    // Ball
+    .ball {
+      @include position-absolute(auto, 50%);
+      bottom: 20px;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 3;
+
+      &::before {
+        content: '⚽';
+        font-size: 40px;
+        @include position-absolute(auto, 0);
+      }
+    }
+
+    &:hover .ball {
+      opacity: 1;
+      animation: shootBallUp 1s forwards;
+    }
+
+    .problem-statement {
+      width: 100%;
+      margin-bottom: 20px;
+      
+      .problem-text {
+        background-color: rgba($black, 0.7);
+        color: $white;
+        padding: 15px;
+        border-radius: 10px;
+        font-style: italic;
+        margin-bottom: 20px;
+        border-left: 4px solid $success-color;
+      }
+    }
+  }
+
+  // Score display
+  .score-display {
+    @include glass-effect;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+
+    h3 {
+      font-size: 2em;
+      color: $primary-color;
+      text-shadow: 1px 1px 2px $shadow-color;
+
+      &::before {
+        content: '🏆';
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes shootBallUp {
+  0% {
+    transform: translate(-50%, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -400px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+// Media queries
+@media (max-width: 768px) {
+  input, textarea, div, h3 {
+    font-size: 1rem;
+  }
+  
+  section {
+    height: 300px;
+  }
+
+  .euclidienne section {
+    margin-bottom: 40px;
+    padding: 20px 15px 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .euclidienne {
+    margin: 0 15px;
+    
+    section {
+      height: auto;
+      min-height: 500px;
+      padding: 20px;
+      
+      input, textarea {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .euclidienne {
+    section {
+      background-size: cover;
+      min-height: 400px;
+      padding: 15px;
+      
+      input, textarea {
+        width: 70%;
+        font-size: 1rem;
+        padding: 8px 15px;
+      }
+
+      p {
+        font-size: 0.9rem;
+        padding: 4px 8px;
+      }
+
+      .ball {
+        display: none;
+      }
+    }
+
+    .score-display h3 {
+      font-size: 1.5em;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .euclidienne {
+    margin: 0 5px;
+    
+    section {
+      min-height: 300px;
+      padding: 15px 10px 30px;
+      margin-bottom: 30px;
+      gap: 10px;
+      
+      h3 {
+        position: static;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        width: 80%;
+        text-align: center;
+      }
+    }
+  }
+}
+
