@@ -15,7 +15,7 @@
           "id": "ex1b",
           "text": "b) Posez la division euclidienne de 431 par 14 :",
           "type": "text",
-          "correctAnswer": "431 = 14 × 30 + 11"
+          "correctAnswer": "431:14 = 14 × 30 reste 11"
         }
       ]
     },
@@ -33,7 +33,7 @@
           "id": "ex2b",
           "text": "b) 444 est-il un multiple de 3 ? Justifiez :",
           "type": "text",
-          "correctAnswer": "oui"
+          "correctAnswer": "oui, car 4 + 4 + 4 = 12 et 12 est un multiple de 3"
         },
         {
           "id": "ex2c",
@@ -69,7 +69,7 @@
           "id": "ex4a",
           "text": "a) Donnez la définition d'un nombre premier :",
           "type": "textarea",
-          "correctAnswer": "Un nombre premier est un entier naturel qui admet exactement deux diviseurs distincts entiers et positifs"
+          "correctAnswer": "Un nombre premier est un nombre entier supérieur à 1 qui n'a que deux diviseurs distincts: 1 et lui-même"
         },
         {
           "id": "ex4b",
